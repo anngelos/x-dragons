@@ -1,35 +1,54 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [emailValue, setEmailValue] = useState("");
+  const [passwordValue, setPasswordValue] = useState("");
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="login-container">
+      <div className="login-card">
+        <div className="login-header">
+          <h2>X-Dragons</h2>
+          <p>Entre com suas credenciais para acessar sua conta</p>
+        </div>
+
+        <form className="login-form" id="loginForm" noValidate>
+          <div className="form-group">
+            <div className="input-wrapper">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={emailValue}
+                onChange={(e) => setEmailValue(e.target.value)}
+                className={emailValue ? "has-value" : ""}
+              />
+              <label htmlFor="email">Usuário</label>
+            </div>
+          </div>
+
+          <div className="form-group">
+            <div className="input-wrapper password-wrapper">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                value={passwordValue}
+                onChange={(e) => setPasswordValue(e.target.value)}
+                className={passwordValue ? "has-value" : ""}
+              />
+              <label htmlFor="password">Senha</label>
+            </div>
+          </div>
+
+          <button type="submit" className="login-btn">
+            <span className="btn-text">Entrar</span>
+          </button>
+        </form>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
