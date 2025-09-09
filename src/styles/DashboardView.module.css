@@ -1,0 +1,9 @@
+.dashboardContainer {
+  width: 90vw;  /* 100% da largura da tela */
+  height: 90vh;  /* altura como quiser */
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+  border-radius: 2%;
+  overflow: auto;
+}

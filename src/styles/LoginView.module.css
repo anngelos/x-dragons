@@ -16,12 +16,12 @@ body {
     color: #334155;
 }
 
-.login-container {
+.loginContainer {
     width: 100%;
     max-width: 400px;
 }
 
-.login-card {
+.loginCard {
     background: white;
     border-radius: 12px;
     padding: 32px;
@@ -29,35 +29,35 @@ body {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-.login-header {
+.loginHeader {
     text-align: center;
     margin-bottom: 32px;
 }
 
-.login-header h2 {
+.loginHeader h2 {
     font-size: 1.875rem;
     font-weight: 700;
     color: #1e293b;
     margin-bottom: 8px;
 }
 
-.login-header p {
+.loginHeader p {
     color: #64748b;
     font-size: 0.875rem;
 }
 
 /* Form Styles */
-.form-group {
+.formGroup {
     margin-bottom: 20px;
 }
 
-.input-wrapper {
+.inputWrapper {
     position: relative;
     display: flex;
     flex-direction: column;
 }
 
-.input-wrapper input {
+.inputWrapper input {
     background: white;
     border: 2px solid #e2e8f0;
     border-radius: 8px;
@@ -69,11 +69,11 @@ body {
     outline: none;
 }
 
-.input-wrapper input::placeholder {
+.inputWrapper input::placeholder {
     color: transparent;
 }
 
-.input-wrapper label {
+.inputWrapper label {
     position: absolute;
     left: 16px;
     top: 12px;
@@ -84,29 +84,29 @@ body {
     transform-origin: left top;
 }
 
-.input-wrapper input:focus {
+.inputWrapper input:focus {
     border-color: black;
 }
 
-.input-wrapper input:focus + label,
-.input-wrapper input:valid + label,
-.input-wrapper input.has-value + label {
+.inputWrapper input:focus + label,
+.inputWrapper input:valid + label,
+.inputWrapper input.has-value + label {
     transform: translateY(-8px) scale(0.875);
     color: black;
     font-weight: 500;
 }
 
 /* Password Toggle */
-.password-wrapper {
+.passwordWrapper {
     position: relative;
 }
 
-.password-wrapper input {
+.passwordWrapper input {
     padding-right: 48px;
 }
 
 /* Form Options */
-.form-options {
+.formOptions {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -116,7 +116,7 @@ body {
 }
 
 /* Button */
-.login-btn {
+.loginBtn {
     width: 100%;
     background: #547792; 
     border: none;
@@ -131,26 +131,26 @@ body {
     margin-bottom: 24px;
 }
 
-.login-btn:hover {
+.loginBtn:hover {
     background: #213448;
 }
 
-.login-btn:active {
+.loginBtn:active {
     transform: translateY(1px);
 }
 
 /* Mobile Responsive */
 @media (max-width: 480px) {
-    .login-card {
+    .loginCard {
         padding: 24px;
         margin: 10px;
     }
     
-    .login-header h2 {
+    .loginHeader h2 {
         font-size: 1.5rem;
     }
     
-    .form-options {
+    .formOptions {
         flex-direction: column;
         align-items: flex-start;
         gap: 16px;

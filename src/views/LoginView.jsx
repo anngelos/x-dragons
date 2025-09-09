@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/LoginView.css";
+import styles from "../styles/LoginView.module.css";
 
 function LoginView() {
-  const [emailValue, setEmailValue] = useState("");
+  const [userValue, setUserValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ function LoginView() {
     const validUser = "targaryen";
     const validPassword = "valiria";
 
-    if (emailValue === validUser && passwordValue === validPassword) {
+    if (userValue === validUser && passwordValue === validPassword) {
       setError("");
       navigate("/dashboard");
     } else {
@@ -23,30 +23,30 @@ function LoginView() {
   };
 
   return (
-    <div className="login-container">
-      <div className="login-card">
-        <div className="login-header">
+    <div className={styles.loginContainer}>
+      <div className={styles.loginCard}>
+        <div className={styles.loginHeader}>
           <h2>X-Dragons</h2>
           <p>Entre com suas credenciais para acessar sua conta</p>
         </div>
 
-        <form className="login-form" id="loginForm" noValidate onSubmit={handleSubmit}>
-          <div className="form-group">
-            <div className="input-wrapper">
+        <form className={styles.loginForm} id="loginForm" noValidate onSubmit={handleSubmit}>
+          <div className={styles.formGroup}>
+            <div className={styles.inputWrapper}>
               <input
                 type="text"
-                id="email"
-                name="email"
-                value={emailValue}
-                onChange={(e) => setEmailValue(e.target.value)}
-                className={emailValue ? "has-value" : ""}
+                id="text"
+                name="text"
+                value={userValue}
+                onChange={(e) => setUserValue(e.target.value)}
+                className={userValue ? "has-value" : ""}
               />
-              <label htmlFor="email">Usuário</label>
+              <label htmlFor="text">Usuário</label>
             </div>
           </div>
 
-          <div className="form-group">
-            <div className="input-wrapper password-wrapper">
+          <div className={styles.formGroup}>
+            <div className={`${styles.inputWrapper} ${styles.passwordWrapper}`}>
               <input
                 type="password"
                 id="password"
@@ -61,8 +61,8 @@ function LoginView() {
 
           {error && <p style={{ color: "red", marginBottom: "12px" }}>{error}</p>}
 
-          <button type="submit" className="login-btn">
-            <span className="btn-text">Entrar</span>
+          <button type="submit" className={styles.loginBtn}>
+            <span className={styles.btnText}>Entrar</span>
           </button>
         </form>
       </div>
