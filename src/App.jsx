@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import LoginView from "./views/LoginView";
 import DashboardView from "./views/DashboardView";
+import "./styles/App.css"
 
 function App() {
   return (

@@ -1,15 +1,58 @@
+const BASE_URL = "http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon";
+
+async function handleResponse(res) {
+  if (!res.ok) {
+    throw new Error(`Erro na requisição: ${res.status}`);
+  }
+
+  const text = await res.text();
+  return text ? JSON.parse(text) : null;
+}
+
 export async function getDragons() {
-  const res = await fetch("http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon");
-  return res.json();
+  try {
+    const res = await fetch(BASE_URL);
+    return await handleResponse(res) || [];
+  } catch (error) {
+    console.error("Erro em getDragons:", error);
+    return [];
+  }
 }
 
 export async function deleteDragon(id) {
-  const res = await fetch(`http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon/${id}`, {
-    method: "DELETE",
-  });
-  return res.json();
+  try {
+    const res = await fetch(`${BASE_URL}/${id}`, {
+      method: "DELETE",
+    });
+    return await handleResponse(res);
+  } catch (error) {
+    console.error(`Erro em deleteDragon (${id}):`, error);
+    return null;
+  }
 }
 
+export async function createDragon(data) {
+  const res = await fetch(`http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+
+  if (!res.ok) {
+    console.error("Erro ao criar dragão:", res.status);
+    return null;
+  }
+
+  const text = await res.text();
+  try {
+    return JSON.parse(text);
+  } catch (err) {
+    console.error("Resposta não é JSON:", text);
+    return null;
+  }
+}
+
+// nao usada ainda
 export async function getDragonById(id) {
   const res = await fetch(`http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon/${id}`);
 
@@ -27,6 +70,7 @@ export async function getDragonById(id) {
   }
 }
 
+// nao usada ainda
 export async function editDragon(id, data) {
   const res = await fetch(`http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon/${id}`, {
     method: "PUT",
@@ -36,27 +80,6 @@ export async function editDragon(id, data) {
 
   if (!res.ok) {
     console.error(`Erro ao editar dragão ${id}:`, res.status);
-    return null;
-  }
-
-  const text = await res.text();
-  try {
-    return JSON.parse(text);
-  } catch (err) {
-    console.error("Resposta não é JSON:", text);
-    return null;
-  }
-}
-
-export async function createDragon(data) {
-  const res = await fetch(`http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
-  });
-
-  if (!res.ok) {
-    console.error("Erro ao criar dragão:", res.status);
     return null;
   }
 
