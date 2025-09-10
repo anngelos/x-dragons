@@ -1,0 +1,61 @@
+.dashboardContainer {
+  width: 100vw;
+  height: 90vh;
+  padding: 20px;
+  background-color: #f5f5f5;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.dashboardTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.dashboardTable th,
+.dashboardTable td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.dashboardTable th {
+  background-color: #394455;
+  color: white;
+  font-weight: bold;
+}
+
+.dashboardTable tr:hover {
+  background-color: #f1f1f1;
+}
+
+.editBtn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  margin-right: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.deleteBtn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.editBtn:hover {
+  background-color: #45a049;
+}
+
+.deleteBtn:hover {
+  background-color: #c0392b;
+}

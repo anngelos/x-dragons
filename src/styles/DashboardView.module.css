@@ -1,9 +1,37 @@
 .dashboardContainer {
-  width: 90vw;  /* 100% da largura da tela */
-  height: 90vh;  /* altura como quiser */
+  width: 50vw;
+  height: 90vh; 
   padding: 20px;
   box-sizing: border-box;
   background-color: #f5f5f5;
   border-radius: 2%;
   overflow: auto;
+}
+
+.title {
+  color: white;
+  text-align: center;
+}
+
+.createDragBtn {
+    background: #547792; 
+    border: none;
+    border-radius: 8px;
+    padding: 5px 24px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 24px;
+}
+
+.createDragBtn:hover {
+    background: #213448;
+}
+
+.createDragBtn:active {
+    transform: translateY(1px);
 }

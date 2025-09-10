@@ -1,10 +1,15 @@
+import Table from "../components/Table";
 import styles from "../styles/DashboardView.module.css";
 
 function DashboardView() {
   return (
     <>
+      <h2 className={styles.title}>Dashboard</h2>
       <div className={styles.dashboardContainer}>
-        <h1>DashboardView</h1>
+        <button type="submit" className={styles.createDragBtn}>
+          <span className={styles.btnText}>Cadastrar Drag</span>
+        </button>
+        <Table />
       </div>
     </>
   );
