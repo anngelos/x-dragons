@@ -1,6 +1,6 @@
 import styles from "../styles/Table.module.css";
 
-function Table() {
+function Table({dragons, onDelete, onEdit}) {
   return (
     <>
       <table className={styles.dashboardTable}>
@@ -12,22 +12,16 @@ function Table() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Produto A</td>
+          {dragons.map((dragon) => (
+          <tr key={dragon.id}>
+            <td>{dragon.id}</td>
+            <td>{dragon.name}</td>
             <td>
-              <button className={styles.editBtn}>Editar</button>
-              <button className={styles.deleteBtn}>Excluir</button>
+              <button className={styles.editBtn} onClick={() => onEdit()}>Editar</button>
+              <button className={styles.deleteBtn} onClick={() => onDelete(dragon.id)}>Excluir</button>
             </td>
           </tr>
-          <tr>
-            <td>2</td>
-            <td>Produto B</td>
-            <td>
-              <button className={styles.editBtn}>Editar</button>
-              <button className={styles.deleteBtn}>Excluir</button>
-            </td>
-          </tr>
+        ))}          
         </tbody>
       </table>
     </>
