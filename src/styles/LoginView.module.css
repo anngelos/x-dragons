@@ -135,6 +135,12 @@ body {
     transform: translateY(1px);
 }
 
+.errorMessage {
+    text-align: center;
+    color: #F75270;
+    padding: 10px 0px 20px;
+}
+
 @media (max-width: 480px) {
     .loginCard {
         padding: 24px;
