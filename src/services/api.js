@@ -52,9 +52,8 @@ export async function createDragon(data) {
   }
 }
 
-// nao usada ainda
 export async function getDragonById(id) {
-  const res = await fetch(`${BASE_URL}/${id}`);
+  const res = await fetch(`https://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon/${id}`);
 
   if (!res.ok) {
     console.error(`Erro ao buscar dragão ${id}:`, res.status);

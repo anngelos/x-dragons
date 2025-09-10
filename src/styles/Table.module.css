@@ -7,6 +7,15 @@
   overflow: auto;
 }
 
+.viewBtn {
+  background-color: #547792;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 .dashboardTable {
   width: 100%;
   border-collapse: collapse;
@@ -58,4 +67,10 @@
 
 .deleteBtn:hover {
   background-color: #c0392b;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
