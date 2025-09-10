@@ -49,7 +49,7 @@ export async function editDragon(id, data) {
 }
 
 export async function createDragon(data) {
-  const res = await fetch(`http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon/${id}`, {
+  const res = await fetch(`http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),

@@ -105,7 +105,6 @@ body {
     padding-right: 48px;
 }
 
-/* Form Options */
 .formOptions {
     display: flex;
     justify-content: space-between;
@@ -115,7 +114,6 @@ body {
     gap: 12px;
 }
 
-/* Button */
 .loginBtn {
     width: 100%;
     background: #547792; 
@@ -139,7 +137,6 @@ body {
     transform: translateY(1px);
 }
 
-/* Mobile Responsive */
 @media (max-width: 480px) {
     .loginCard {
         padding: 24px;
