@@ -1,6 +1,6 @@
 const BASE_URL = "https://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon";
 
-async function handleResponse(res) {
+export async function handleResponse(res) {
   if (!res.ok) {
     throw new Error(`Erro na requisição: ${res.status}`);
   }
