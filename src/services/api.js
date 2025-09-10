@@ -1,4 +1,4 @@
-const BASE_URL = "http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon";
+const BASE_URL = "https://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon";
 
 async function handleResponse(res) {
   if (!res.ok) {
@@ -32,7 +32,7 @@ export async function deleteDragon(id) {
 }
 
 export async function createDragon(data) {
-  const res = await fetch(`http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon`, {
+  const res = await fetch(BASE_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
@@ -54,7 +54,7 @@ export async function createDragon(data) {
 
 // nao usada ainda
 export async function getDragonById(id) {
-  const res = await fetch(`http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon/${id}`);
+  const res = await fetch(`${BASE_URL}/${id}`);
 
   if (!res.ok) {
     console.error(`Erro ao buscar dragão ${id}:`, res.status);
@@ -72,7 +72,7 @@ export async function getDragonById(id) {
 
 // nao usada ainda
 export async function editDragon(id, data) {
-  const res = await fetch(`http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon/${id}`, {
+  const res = await fetch(`${BASE_URL}/${id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
