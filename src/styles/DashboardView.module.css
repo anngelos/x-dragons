@@ -8,6 +8,11 @@
   overflow: auto;
 }
 
+.loadingText {
+  color: black;
+  text-align: center;
+}
+
 .title {
   color: white;
   text-align: center;

@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import Table from "../components/Table";
 import styles from "../styles/DashboardView.module.css";
-import { openCreateDragonModal, openEditDragonModal } from "../components/DragonModal";
+import {
+  openCreateDragonModal,
+  openEditDragonModal,
+} from "../components/DragonModal";
 import { openViewDragonModal } from "../components/ViewDragon";
 import {
   getDragons,
@@ -13,13 +16,16 @@ import {
 
 function DashboardView() {
   const [dragons, setDragons] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const fetchDragons = async () => {
+    setLoading(true);
     const data = await getDragons();
     const sorted = data.sort((a, b) =>
       a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1
     );
     setDragons(sorted);
+    setLoading(false);
   };
 
   const handleCreate = () => {
@@ -63,12 +69,16 @@ function DashboardView() {
         >
           <span className={styles.btnText}>Cadastrar Drag</span>
         </button>
-        <Table
-          dragons={dragons}
-          onDelete={handleDelete}
-          onEdit={handleEdit}
-          onView={handleView}
-        />
+        {loading ? (
+          <h1 className={styles.loadingText}>Carregando...</h1>
+        ) : (
+          <Table
+            dragons={dragons}
+            onDelete={handleDelete}
+            onEdit={handleEdit}
+            onView={handleView}
+          />
+        )}
       </div>
     </>
   );
