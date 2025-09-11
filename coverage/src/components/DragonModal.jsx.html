@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -107,36 +107,36 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -147,18 +147,18 @@
 import withReactContent from "sweetalert2-react-content";
 import DragonForm from "./DragonForm";
 &nbsp;
-const MySwal = <span class="cstat-no" title="statement not covered" >withReactContent(Swal);</span>
+const MySwal = withReactContent(Swal);
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >openCreateDragonModal(o</span>nSubmit) {
-<span class="cstat-no" title="statement not covered" >  MySwal.fire({</span>
+export function openCreateDragonModal(onSubmit) {
+  MySwal.fire({
     title: &lt;p&gt;Cadastrar Dragão&lt;/p&gt;,
     html: (
       &lt;DragonForm
-        onSubmit={<span class="fstat-no" title="function not covered" >(d</span>ata) =&gt; {
-<span class="cstat-no" title="statement not covered" >          onSubmit(data);</span>
-<span class="cstat-no" title="statement not covered" >          MySwal.close();</span>
+        onSubmit={(data) =&gt; {
+          onSubmit(data);
+          MySwal.close();
         }}
-        onCancel={<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >M</span>ySwal.close()}</span>
+        onCancel={() =&gt; MySwal.close()}
       /&gt;
     ),
     showConfirmButton: false,
@@ -166,17 +166,17 @@ export function <span class="fstat-no" title="function not covered" >openCreateD
   });
 }
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >openEditDragonModal(d</span>ragon, onSubmit) {
-<span class="cstat-no" title="statement not covered" >  MySwal.fire({</span>
+export function openEditDragonModal(dragon, onSubmit) {
+  MySwal.fire({
     title: &lt;p&gt;Editar Dragão&lt;/p&gt;,
     html: (
       &lt;DragonForm
         defaultValues={dragon}
-        onSubmit={<span class="fstat-no" title="function not covered" >(d</span>ata) =&gt; {
-<span class="cstat-no" title="statement not covered" >          onSubmit(data);</span>
-<span class="cstat-no" title="statement not covered" >          MySwal.close();</span>
+        onSubmit={(data) =&gt; {
+          onSubmit(data);
+          MySwal.close();
         }}
-        onCancel={<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >M</span>ySwal.close()}</span>
+        onCancel={() =&gt; MySwal.close()}
       /&gt;
     ),
     showConfirmButton: false,
@@ -190,7 +190,7 @@ export function <span class="fstat-no" title="function not covered" >openEditDra
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-11T02:56:18.909Z
+                at 2025-09-11T03:06:25.883Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
