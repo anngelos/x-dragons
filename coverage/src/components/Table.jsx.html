@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -98,7 +98,7 @@
 <a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -110,13 +110,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -129,8 +129,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import styles from "../styles/Table.module.css";
 &nbsp;
-function <span class="fstat-no" title="function not covered" >Table({</span>dragons, onDelete, onEdit, onView}) {
-<span class="cstat-no" title="statement not covered" >  return (</span>
+function Table({dragons, onDelete, onEdit, onView}) {
+  return (
     &lt;&gt;
       &lt;table className={styles.dashboardTable}&gt;
         &lt;thead&gt;
@@ -141,14 +141,14 @@ function <span class="fstat-no" title="function not covered" >Table({</span>drag
           &lt;/tr&gt;
         &lt;/thead&gt;
         &lt;tbody&gt;
-          {dragons.map(<span class="fstat-no" title="function not covered" >(d</span>ragon) =&gt; (
-<span class="cstat-no" title="statement not covered" >          &lt;tr key={dragon.id}&gt;</span>
+          {dragons.map((dragon) =&gt; (
+          &lt;tr key={dragon.id}&gt;
             &lt;td&gt;{dragon.id}&lt;/td&gt;
             &lt;td&gt;{dragon.name}&lt;/td&gt;
             &lt;td className={styles.actions}&gt;
-              &lt;button className={styles.viewBtn} onClick={<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >o</span>nView(dragon.id)}&gt;V</span>isualizar&lt;/button&gt;
-              &lt;button className={styles.editBtn} onClick={<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >o</span>nEdit(dragon)}&gt;E</span>ditar&lt;/button&gt;
-              &lt;button className={styles.deleteBtn} onClick={<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >o</span>nDelete(dragon.id)}&gt;E</span>xcluir&lt;/button&gt;
+              &lt;button className={styles.viewBtn} onClick={() =&gt; onView(dragon.id)}&gt;Visualizar&lt;/button&gt;
+              &lt;button className={styles.editBtn} onClick={() =&gt; onEdit(dragon)}&gt;Editar&lt;/button&gt;
+              &lt;button className={styles.deleteBtn} onClick={() =&gt; onDelete(dragon.id)}&gt;Excluir&lt;/button&gt;
             &lt;/td&gt;
           &lt;/tr&gt;
         ))}          
@@ -166,7 +166,7 @@ export default Table;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-11T03:06:25.883Z
+                at 2025-09-11T05:38:12.286Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
