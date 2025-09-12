@@ -74,3 +74,12 @@
   align-items: center;
   justify-content: space-evenly;
 }
+
+@media (max-width: 768px) {
+  .actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+}

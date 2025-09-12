@@ -40,3 +40,17 @@
 .createDragBtn:active {
     transform: translateY(1px);
 }
+
+@media (max-width: 768px) {
+  .dashboardContainer {
+    width: 100%;
+    height: auto;
+    padding: 12px;
+  }
+
+  .createDragBtn {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+}
