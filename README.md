@@ -12,5 +12,10 @@ The project implements the basic functionalities of a CRUD: Create, Read, Update
 ## Run the project
 Go to the project root folder and run the command `npm run dev`.
 
+You'll need these credentials to access the application:
+
+User: targaryen
+Password: valiria
+
 ## Run Unit Test
 In the project root, run `npm run test` and it will execute the tests and display the coverage.
